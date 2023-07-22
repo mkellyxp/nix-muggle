@@ -49,4 +49,26 @@
         inotify-tools
     ];
 
+
+    systemd.timers."system-check" = {
+        wantedBy = [ "timers.target" ];
+            timerConfig = {
+            OnBootSec = "1m";
+            OnUnitActiveSec = "1m";
+            Unit = "system-check.service";
+        };
+    };
+
+    systemd.services."system-check" = {
+        script = ''
+            set -eu
+            ${pkgs.coreutils}/bin/nix-channel --list
+        '';
+        serviceConfig = {
+            Type = "oneshot";
+            User = "root";
+        };
+    };
+
+
 }
