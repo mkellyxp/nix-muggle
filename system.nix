@@ -24,12 +24,16 @@
     services.xserver.desktopManager.cinnamon.enable = true;
     xdg.portal.enable = true;
 
+    ## To enable autologin, you can put this in your main /etc/nixos/configuration.nix and replace user with your username
+    #services.xserver.displayManager.lightdm.autoLogin.enable = true;
+    #services.xserver.displayManager.lightdm.autoLogin.user = "user";
+
 
     ## Automatic Updates ##
     nix.gc = {
         automatic = true;
         dates = "weekly";
-        options = "--delete-older-than 7d";
+        options = "--delete-older-than 14d";
     };
 
     system.autoUpgrade = {
