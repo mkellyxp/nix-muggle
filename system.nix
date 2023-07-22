@@ -38,6 +38,7 @@
 
     ## Base Apps ##
     environment.systemPackages = with pkgs; [
+        gnome.gnome-software
         gthumb
         firefox
         htop
