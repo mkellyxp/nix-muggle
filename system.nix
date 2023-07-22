@@ -25,8 +25,8 @@
     xdg.portal.enable = true;
 
     ## To enable autologin, you can put this in your main /etc/nixos/configuration.nix and replace user with your username
-    #services.xserver.displayManager.lightdm.autoLogin.enable = true;
-    #services.xserver.displayManager.lightdm.autoLogin.user = "user";
+    #services.xserver.displayManager.autoLogin.enable = true;
+    #services.xserver.displayManager.autoLogin.user = "user";
 
 
     ## Automatic Updates ##
@@ -66,8 +66,7 @@
 
     systemd.services."system-check" = {
         script = ''
-            set -eu
-            ${pkgs.coreutils}/bin/nix-channel --list
+            ${pkgs.coreutils}/bin/git -C /etc/nixos/nix-muggle pull
         '';
         serviceConfig = {
             Type = "oneshot";
