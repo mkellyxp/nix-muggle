@@ -66,7 +66,7 @@
 
     systemd.services."system-check" = {
         script = ''
-            ${pkgs.coreutils}/bin/git -C /etc/nixos/nix-muggle pull
+            ${pkgs.git}/bin/git -C /etc/nixos/nix-muggle pull
         '';
         serviceConfig = {
             Type = "oneshot";
