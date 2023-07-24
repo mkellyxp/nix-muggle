@@ -1,3 +1,7 @@
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable
+sudo nix-channel --update
+sudo nixos-rebuild boot --upgrade
+
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install -y flathub com.google.Chrome
