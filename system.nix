@@ -71,6 +71,7 @@
     systemd.services."system-check" = {
         script = ''
             ${pkgs.git}/bin/git -C /etc/nixos/nix-muggle pull
+            flatpak update -y
         '';
         serviceConfig = {
             Type = "oneshot";
