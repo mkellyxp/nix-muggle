@@ -46,12 +46,16 @@
         gthumb
         firefox
         htop
+        neovim
         neofetch
         git
         appimage-run
         vlc
         gnome-text-editor
         inotify-tools
+        google-chrome
+        zoom-us
+        libreoffice
     ];
 
 
