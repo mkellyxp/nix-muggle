@@ -62,8 +62,8 @@
     systemd.timers."system-check" = {
         wantedBy = [ "timers.target" ];
             timerConfig = {
-            OnBootSec = "1m";
-            OnUnitActiveSec = "1m";
+            OnBootSec = "15m";
+            OnUnitActiveSec = "1w";
             Unit = "system-check.service";
         };
     };
